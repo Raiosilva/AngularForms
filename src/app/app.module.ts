@@ -1,3 +1,5 @@
+import { QuestionService } from './shared/question.service';
+import { AnswerService } from './shared/answer.service';
 import { FormService } from './shared/form.service';
 import { HttpModule } from '@angular/http';
 import { UsersModule } from './users/users.module';
@@ -42,7 +44,9 @@ import { Angular2TokenService } from 'angular2-token';
   ],
   providers: [
     Angular2TokenService,
-    FormService
+    FormService,
+    AnswerService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })
