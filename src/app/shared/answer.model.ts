@@ -14,6 +14,8 @@ export class Answer {
 
     private includeQuestionsAnswers(questions: any) {
         for (const count in questions) {
-            this.questionsAnswers.push( new QuestionsAnswer(questions[count]) );
+            this.questionsAnswers.push( new QuestionsAnswer(questions[count])
+            );
         }
     }
+  }

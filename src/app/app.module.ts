@@ -1,3 +1,4 @@
+import { FormService } from './shared/form.service';
 import { HttpModule } from '@angular/http';
 import { UsersModule } from './users/users.module';
 import { AnswersModule } from './answers/answers.module';
@@ -39,7 +40,10 @@ import { Angular2TokenService } from 'angular2-token';
     RouterModule,
     UsersModule
   ],
-  providers: [Angular2TokenService],
+  providers: [
+    Angular2TokenService,
+    FormService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
