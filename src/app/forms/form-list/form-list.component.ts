@@ -1,3 +1,7 @@
+import { Question } from './../../shared/question.model';
+import { Form } from './../../shared/form.model';
+import { MzToastService } from 'ng2-materialize';
+import { FormService } from './../../shared/form.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormListComponent implements OnInit {
 
-  constructor() { }
+  private forms: Form[] = [];
+
+  constructor(
+    private formService: FormService,
+    private toastService: MzToastService
+    ) { }
 
   ngOnInit() {
+    this.formService.getForms().subscribe(data => {
+      for (const form of data) {
+        this.forms.push(new Form(form));
+      }
+    });
+  }
+
+  deleteForm(form: Form): boolean {
+    if (confirm('Your want delete this form?')) {
+      this.formService.destroyForms(form.id).subscribe(data => {
+        const index = this.forms.indexOf(form);
+        this.forms.splice(index, 1);
+        this.toastService.show('Form deleted', 8000, 'green');
+      }, error => {
+        this.toastService.show('Error in delete Form ' + form.title, 8000, 'red');
+      });
+    }
+    return false;
   }
 
 }

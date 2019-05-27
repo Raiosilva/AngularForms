@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { QuestionService } from './shared/question.service';
 import { AnswerService } from './shared/answer.service';
 import { FormService } from './shared/form.service';
@@ -39,6 +40,7 @@ import { Angular2TokenService } from 'angular2-token';
     AppRoutingModule,
 // tslint:disable-next-line: deprecation
     HttpModule,
+    HttpClientModule,
     RouterModule,
     UsersModule
   ],

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Angular2TokenService} from 'angular2-token';
 
@@ -6,7 +6,7 @@ import { Angular2TokenService} from 'angular2-token';
 export class QuestionService {
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClientModule,
     private tokenService: Angular2TokenService
     ) { }
 

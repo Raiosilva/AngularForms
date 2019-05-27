@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Angular2TokenService, A2tUiModule } from 'angular2-token';
 import { Injectable } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class FormService {
 
   constructor(
-    private httpClient: HttpClient,
+    private http: HttpClientModule,
     private tokenService: Angular2TokenService
   ) { }
 
@@ -21,7 +21,7 @@ export class FormService {
     return this.tokenService.get('forms/' + formId).map(res => res.json());
   }
 
-  createForm(formParams: number) {
+  createForms(formParams: number) {
     return this.tokenService.post('forms', formParams).map(res => res.json());
   }
 
