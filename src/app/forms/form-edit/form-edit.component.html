@@ -1,4 +1,5 @@
 <div class="container">
   <app-form-form [form]="form"></app-form-form>
+  <app-question-list [formId]="form.id" [questions]="form.questions" *ngIf="form.id != undefined"></app-question-list>
 
 </div>
