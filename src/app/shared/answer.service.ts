@@ -18,7 +18,7 @@ export class AnswerService {
     return this.tokenService.get('answers/' + answerId).map(res => res.json());
   }
 
-  createAnswer(answerParams: number) {
+  createAnswer(answerParams: any) {
     return this.tokenService.post('answers', answerParams).map(res => res.json());
   }
 
