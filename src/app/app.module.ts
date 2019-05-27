@@ -1,3 +1,5 @@
+import { HttpModule } from '@angular/http';
+import { UsersModule } from './users/users.module';
 import { AnswersModule } from './answers/answers.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +16,9 @@ import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 
+import { Angular2TokenService } from 'angular2-token';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +34,12 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     AnswersModule,
     AppRoutingModule,
-    RouterModule
+// tslint:disable-next-line: deprecation
+    HttpModule,
+    RouterModule,
+    UsersModule
   ],
-  providers: [],
+  providers: [Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
