@@ -7,6 +7,10 @@ import { GraphTextComponent } from './shared/graph-text/graph-text.component';
 import { GraphBooleanComponent } from './shared/graph-boolean/graph-boolean.component';
 import { IndividualDetailsComponent } from './shared/individual-details/individual-details.component';
 import {FormsModule as CoreFormsModule} from '@angular/forms';
+import { AllComponent } from './answer-list/all/all.component';
+import { IndividualComponent } from './answer-list/individual/individual.component';
+import { MaterializeModule } from 'ng2-materialize';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -15,11 +19,15 @@ import {FormsModule as CoreFormsModule} from '@angular/forms';
     GraphNumberComponent,
     GraphTextComponent,
     GraphBooleanComponent,
-    IndividualDetailsComponent
+    IndividualDetailsComponent,
+    AllComponent,
+    IndividualComponent
   ],
   imports: [
     CommonModule,
-    CoreFormsModule
+    CoreFormsModule,
+    MaterializeModule.forRoot(),
+    ChartsModule
   ]
 })
 export class AnswersModule { }
