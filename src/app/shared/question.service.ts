@@ -10,7 +10,7 @@ export class QuestionService {
     private tokenService: Angular2TokenService
     ) { }
 
-  createQuestion(formId: number, question: any) {
+  createQuestion(formId: number, question) {
     return this.tokenService.post('questions', {formId, question}).map(res => res.json());
   }
 

@@ -11,7 +11,7 @@ export class QuestionListComponent implements OnInit {
 
   @Input() questions: Question[];
   @Input() formId: number;
-  public questionNew: Question = new Question({});
+  public question_new: Question = new Question({});
 
   constructor() { }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { QuestionService } from '../../shared/question.service';
-import { Question } from '../../shared/question.model';
 import { MzToastService} from 'ng2-materialize';
+import { QuestionService } from 'src/app/shared/question.service';
+import { Question } from 'src/app/shared/question.model';
 
 
 @Component({
@@ -40,7 +40,7 @@ export class QuestionFormComponent implements OnInit {
     }
   }
 
-  deleteForm(form): boolean {
+  deleteForm(form: any): boolean {
     if (confirm('Your want delete this question?')) {
       this.questionService.destroyQuestion(this.question.id).subscribe(data => {
         const index = this.questions.indexOf (this.question);
