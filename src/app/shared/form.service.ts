@@ -21,11 +21,11 @@ export class FormService {
     return this.tokenService.get('forms/' + formId).map(res => res.json());
   }
 
-  createForms(formParams: number) {
+  createForms(formParams: any) {
     return this.tokenService.post('forms', formParams).map(res => res.json());
   }
 
-  updateForms(formId: number, formParams: number) {
+  updateForms(formId: number, formParams: any) {
     return this.tokenService.put('forms/' + formId, formParams).map(res => res.json());
   }
 
